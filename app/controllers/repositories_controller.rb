@@ -1,15 +1,11 @@
 class RepositoriesController < ApplicationController
   def index
-    @repositories = if search_params[:query].present?
-      UserRepositoriesService.new(search_params[:query]).call
+    if search_params[:query].present?
+      @repositories = UserRepositoriesQuery.new(search_params[:query]).call
+      @user_name = UserNameQuery.new(search_params[:query]).call
     else
-      []
-    end
-
-    @user_name = if search_params[:query].present?
-      UserNameService.new(search_params[:query]).call
-    else
-      []
+      @repositories = []
+      @user_name = ''
     end
   end
 
