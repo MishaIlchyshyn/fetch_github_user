@@ -1,0 +1,9 @@
+<%= form_for :search, url: root_path, method: :get do |f| %>
+  <div>
+    <%= f.text_field :query, placeholder: 'github login' %>
+  </div>
+
+  <div>
+    <%= f.submit 'Search' %>
+  </div>
+<% end  %>
