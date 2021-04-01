@@ -1,0 +1,15 @@
+<h1>Fetch repositories</h1>
+
+<%= render "repositories/form" %>
+
+<h2><%= @user_name.blank? ? '' : @user_name %></h2>
+
+<ul>
+  <% if @repositories.any? %>
+    <% @repositories.each do |repository| %>
+      <li>
+        <%= repository %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
