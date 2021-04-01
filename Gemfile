@@ -25,6 +25,9 @@ gem 'graphql'
 gem 'graphql-client'
 gem 'pry'
 
+gem 'jslint_on_rails'
+gem 'rubocop', require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

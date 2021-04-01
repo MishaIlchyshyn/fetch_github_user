@@ -3,7 +3,7 @@ class GraphqlQuery
     @user_login = user_login
   end
 
-  def call
+  def result
     graphql_query
   end
 

@@ -1,12 +1,7 @@
 class RepositoriesController < ApplicationController
   def index
-    if search_params[:query].present?
-      @repositories = UserRepositoriesQuery.new(search_params[:query]).call
-      @user_name = UserNameQuery.new(search_params[:query]).call
-    else
-      @repositories = []
-      @user_name = ''
-    end
+    @repositories = GithubUserService.new(search_params[:query]).repositories
+    @user_name = GithubUserService.new(search_params[:query]).user_name
   end
 
   private
