@@ -22,10 +22,10 @@ class GithubUserService
   end
 
   def fetch_repositories
-    @user_data.nil? ? [] : @user_data.repositories.edges.map { |repository| repository.node.name }
+    user_data.nil? ? [] : user_data.repositories.edges.map { |repository| repository.node.name }
   end
 
   def fetch_user_name
-    @user_data.nil? ? 'not found' : @user_data.name
+    user_data.nil? ? 'not found' : user_data.name
   end
 end
