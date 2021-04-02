@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GraphqlQuery
   def initialize(user_login)
     @user_login = user_login

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RepositoriesController < ApplicationController
   def index
     @repositories = GithubUserService.new(search_params[:query]).repositories

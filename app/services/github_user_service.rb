@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GithubUserService
   def initialize(params)
     @user_login = params
