@@ -18,7 +18,7 @@ class GithubUserService
   attr_reader :user_login, :user_data
 
   def user_data
-    @user_data ||= GraphqlQuery.new(user_login).result.data.user
+    @user_data ||= GraphqlQuery.new(user_login).result&.data&.user
   end
 
   def fetch_repositories
